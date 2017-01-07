@@ -1,12 +1,22 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import {
+  Router,
+  Route,
+  Redirect,
+  browserHistory
+} from 'react-router';
 import {
   App,
-  Home
+  Home,
+  NoMatch
 } from './containers';
 
 export default () => (
-  <Route path="/" component={App}>
-    <IndexRoute component={Home} />
-  </Route>
+  <Router history={browserHistory}>
+    <Redirect from="/" to="/home" />
+    <Route path="/" component={App}>
+      <Route path="home" component={Home} />
+      <Route path="*" component={NoMatch} />
+    </Route>
+  </Router>
 );

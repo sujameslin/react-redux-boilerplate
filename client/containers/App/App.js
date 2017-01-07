@@ -1,5 +1,8 @@
 /* eslint react/prefer-stateless-function:0 */
 import React, { PropTypes } from 'react';
+import { NavigationBar } from '../../components';
+
+require('./app.css');
 
 export default class App extends React.Component {
   static propTypes = {
@@ -12,7 +15,10 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        {this.props.children}
+        <NavigationBar />
+        <div className="container">
+          {this.props.children}
+        </div>
       </div>
     );
   }

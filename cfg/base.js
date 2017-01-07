@@ -20,42 +20,42 @@ module.exports = {
     debug: true,
     devtool: 'eval',
     output: {
-        path: path.join(__dirname, '/../dist/assets'),
-        filename: 'app.js',
-        publicPath: defaultSettings.publicPath
+      path: path.join(__dirname, '/../dist/assets'),
+      filename: 'app.js',
+      publicPath: defaultSettings.publicPath
     },
     devServer: {
-        contentBase: defaultSettings.srcPath,
-        historyApiFallback: true,
-        hot: true,
-        port: port,
-        publicPath: defaultSettings.publicPath,
-        noInfo: false,
-        quiet: true
-    },
-    module: {
-        // preLoaders: [
-        //     {
-        //         test: /\.(js|jsx)$/,
-        //         include: srcPath,
-        //         loader: 'eslint-loader'
-        //     }
-        // ],
-        loaders: [
-            {
-                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                loader: 'file-loader'
-            },
-            {
-                test: /\.html$/,
-                loader: 'file?name=[name].[ext]'
-            },
-            {
-                test: /\.css$/,
-                loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]-[local]___[hash:base64:5]!postcss'
-            }
-        ]
-    },
+      contentBase: defaultSettings.srcPath,
+      historyApiFallback: true,
+      hot: true,
+      port: port,
+      publicPath: defaultSettings.publicPath,
+      noInfo: false,
+      quiet: true
+  },
+  module: {
+    // preLoaders: [
+    //     {
+    //         test: /\.(js|jsx)$/,
+    //         include: srcPath,
+    //         loader: 'eslint-loader'
+    //     }
+    // ],
+    loaders: [
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.html$/,
+        loader: 'file?name=[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]-[local]___[hash:base64:5]!postcss'
+      }
+    ]
+  },
     resolve: {
         extensions: ['', '.js', '.jsx'],
         alias: {
