@@ -7,7 +7,7 @@ const baseConfig = require('./base');
 const defaultSettings = require('./defaults');
 
 let config = Object.assign({}, baseConfig, {
-    entry: path.join(__dirname, '../src/index'),
+    entry: path.join(__dirname, '../client/index'),
     cache: false,
     plugins: [
         new webpack.optimize.DedupePlugin(),

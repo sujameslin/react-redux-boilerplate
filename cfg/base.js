@@ -1,7 +1,6 @@
-'use strict';
+import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
-const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 let defaultSettings = require('./defaults');
 const srcPath = path.join(__dirname, '/../client');
 const port = 8000;
